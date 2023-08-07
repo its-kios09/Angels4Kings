@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angels4Kings</title>
+      <!-- Favicons -->
+    <link href="assets/img/logo.png" rel="icon">
+    <link href="assets/img/logo.png" rel="apple-touch-icon">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            text-decoration: none;
+            font-family: 'Josefin Sans',sans-serif;
+        
+        }
+        body{
+            width: 100%;
+            height:100vh;
+            overflow: hidden;
+        }
+                  /* Responsive styles */
+        @media only screen and (max-width: 600px) {
+            .wrapper {
+                padding: 10px;
+            }
+
+            .logo_info img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body style="background: #D2882A; ">
+	<form method="post" action="Oauth_stkPush.php">
+		<div class="wrapper">
+			<div class="checkout_wrapper">
+				<div class="logo_info">
+					<img src="./assets/img/logo2.png" alt="image">
+					<div class="content">
+						<p>Pay ksh: 1000 to view our angels profile and choose</p>
+                        <p>You will sent login credentials via sms after payment</p>
+                        <p>Amount paid is redeemable <br> after <br> choosing your date</p>
+                        <br>
+                        <br>
+                        <p>Pay here: +254712345566</p>
+					</div>
+				</div>
+				<div class="checkout_form">
+					<p>View Our Angels</p>
+					<div class="details">
+						<div class="section">
+							<input class="input2" type="email" name="email" placeholder="Enter provided Email" required="required">
+						</div>
+						<div class="section">
+							<input class="input2"  type="password" name="password" placeholder="Enter sent Password" required="required">
+						</div>  
+						<button class="btn">Login</button>
+						
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</form>
+
+</body>
+</html>
