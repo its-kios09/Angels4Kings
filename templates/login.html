@@ -3,30 +3,42 @@
 <head>
     <title>Angels4Kings</title>
       <!-- Favicons -->
-    <link href="assets/img/logo.png" rel="icon">
-    <link href="assets/img/logo.png" rel="apple-touch-icon">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="/static/img/logo.png" rel="icon">
+    <link href="/static/img/logo.png" rel="apple-touch-icon">
+    <link href="/static/css/style.css" rel="stylesheet">
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             outline: none;
             text-decoration: none;
-            font-family: 'Josefin Sans',sans-serif;
-        
+            font-family: 'Josefin Sans', sans-serif;
         }
-        body{
+    
+        body {
             width: 100%;
-            height:100vh;
+            height: 100vh;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-                  /* Responsive styles */
+    
+        .wrapper {
+            padding: 10px;
+        }
+    
+        .logo_info img {
+            max-width: 100%;
+        }
+    
+        /* Responsive styles */
         @media only screen and (max-width: 600px) {
             .wrapper {
                 padding: 10px;
             }
-
+    
             .logo_info img {
                 max-width: 100%;
             }
@@ -38,7 +50,7 @@
 		<div class="wrapper">
 			<div class="checkout_wrapper">
 				<div class="logo_info">
-					<img src="./assets/img/logo2.png" alt="image">
+					<img src=".//static/img/logo2.png" alt="image">
 					<div class="content">
 						<p>Pay ksh: 1000 to view our angels profile and choose</p>
                         <p>You will sent login credentials via sms after payment</p>
@@ -57,7 +69,7 @@
 						<div class="section">
 							<input class="input2"  type="password" name="password" placeholder="Enter sent Password" required="required">
 						</div>  
-						<button class="btn">Login</button>
+						<button class="btn">Unlock Angels</button>
 						
 					</div>
 				</div>
