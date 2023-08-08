@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template
 
-views = Blueprint(__name__,"views")
+# Initializing pyrebase
 
+views = Blueprint(__name__,"views")
 # Defining our routes
 # home page route
 @views.route('/')
