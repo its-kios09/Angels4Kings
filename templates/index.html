@@ -67,7 +67,13 @@
       <div class="carousel-item active">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Straight Elite Female Companions <span>For Male</span></h2>
-          <p class="animate__animated fanimate__adeInUp">Looking for the PERFECT GIRLFRIEND EXPERIENCE WITH NO STRINGS ATTACHED? We are a personalized female escort for men companion service that caters to the most discerning, EXCLUSIVE MEN who expects the best. When scheduling an appointment you will be speaking to CEO, who is a true pioneer to this industry with many years of matchmaking experience</p>
+          <p class="animate__animated fanimate__adeInUp">
+            Looking for the PERFECT GIRLFRIEND EXPERIENCE WITH NO STRINGS ATTACHED? We are a personalized female escort for men companion service that caters to the most discerning, EXCLUSIVE MEN who expects the best. Call 0715327809 for faster booking of our Angels and a GUIDE on how to view our angels. When scheduling an appointment you will be speaking to CEO, who is a true pioneer to this industry with many years of matchmaking experience.
+
+          </p>
+          <p>
+            NB  We cater to a DISCERNING CLIENTELE who appreciate PREMIUM SERVICES. Please note that our services are exclusively available to individuals who meet specific financial criteria. If you believe you qualify, you may contact this number.
+          </p>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">More about us</a>
         </div>
       </div>
@@ -121,7 +127,7 @@
             <a href="#" class="btn-learn-more">Terms & Conditions</a>
             <br>
             <br>
-            <p>Our goal is to empower women to have the adventures they dream of with a companion who can make them feel unstoppable!</p>
+            <p>Our goal is to empower MEN to have the adventures they dream of with a companion who can make them feel unstoppable.</p>
             <a href="#" class="btn-learn-more">Request Encounter</a>
 
           </div>
@@ -139,7 +145,11 @@
         <div class="row" data-aos="zoom-out">
           <div class="col-lg-9 text-center text-lg-start">
             <h3>Choose your Angel</h3>
-            <p>Our goal is to empower men to have the adventures they dream of with a companion who can make them feel unstoppable!!</p>
+            <p style="text-align: justify;">We pride ourselves in our rigorous Straight Female Escorts screening process to make sure we have the most interesting, polite, charming, emotionally mature and healthy female escorts for our clients. We have a reputation for turning away up to 95% of my female applicants on average. When you book a female companion from ANGELS 4 KINGS, you are assured that you will be getting the best in the industry. We screen each and every one of our women very thoroughly to guarantee this. Check our Employment page for our escort companion requirements.
+
+              All photographs of the females of Angels4Kings shown are genuine and recent
+              
+              Please fill out the form on the Encounters page and we will contact you to confirm your appointment(SERIOUS INDIVIDUALS ONLY).</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
             <a class="cta-btn align-middle" href="{{ url_for('views.auth_view') }}">View</a>
@@ -148,21 +158,7 @@
 
       </div>
     </section><!-- End Cta Section -->
-        <!-- ======= Cta Section ======= -->
-    <section id="services" class="cta">
-      <div class="container">
-
-        <div class="row" data-aos="zoom-out">
-          <div class="col-lg-12 text-center text-lg-start">
-            <p>We pride ourselves in our rigorous Straight Female Escorts screening process to make sure we have the most interesting, polite, charming, emotionally mature and healthy male escorts for our clients. I have a reputation for turning away up to 95% of my female applicants on average. When you book a female companion from ANGELS 4 KINGS, you are assured that you will be getting the best in the industry. We screen each and every one of our men very thoroughly to guarantee this. Check our Employment page for our escort companion requirements.            </p>
-            <p>All photographs of the females of <b>Angels4Kings</b> shown are genuine and recent</p>
-            <p>Please fill out the form on the Encounters page and we will contact you to confirm your appointment.</p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Cta Section -->
-
+    
     <!-- ======= F.A.Q Section ======= -->
     <section id="faq" class="faq">
       <div class="container">
@@ -173,6 +169,14 @@
         </div>
 
         <ul class="faq-list">
+          <li>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Even though Escort agencies are legal in the Kenya why is there a social stigma related to them? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Often the stigma surrounding professional female companionship is wrapped up in a misunderstanding of what is actually being offered. As a busy professional, discerning man, you are looking for someone to spend your time with who already understands your life. Someone who does not need constant attention or to be coddled. Someone who wants to make you feel like an absolute king, and has no expectations for time commitments or emotional labor. Someone who can escort you to an important event and put all his attention on you, but isn’t intimidated by how you capture a room. This is the beauty of straight female companionship. You are paying for the time and company of someone you don’t have to hand feed. A woman who is educated, classy, and experienced. This may not be the thing for everyone. And those who do not understand often speak negatively about the experience because they believe it is something else. Our Terms & Conditions very clearly lay out what we do and do not offer and what you can expect on your date.
+              </p>
+            </div>
+          </li>
 
           <li>
             <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">When was the agency Angels4Kings founded? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
@@ -344,7 +348,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="" method="POST">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -407,9 +411,21 @@
 
   <!-- Template Main JS File -->
   <script src="/static/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-    
+        {% if success_message %}
+            Swal.fire({
+                title: "Success",
+                text: "{{ success_message }}",
+                icon: "success",
+                toast: true,
+                position: "top",
+                showConfirmButton: false,
+                timer: 5000
+            });
+        {% endif %}
   </script>
+    
 
 </body>
 

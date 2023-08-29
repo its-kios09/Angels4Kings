@@ -6,6 +6,9 @@ from views import views
 app = Flask(__name__)
 # Registering blueprint views
 app.register_blueprint(views,url_prefix='/')
+# Secret Key
+app.secret_key = 'qwertyuiopasdfghjklzxcvbnm'
+
 
 
 if __name__ == '__main__':
