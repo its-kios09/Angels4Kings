@@ -5,14 +5,13 @@ from pyrebase import pyrebase
 
 # Configuration and Initialize firebase
 config = {
-    'apiKey': "AIzaSyBPnqa2PdpSnipXI1S407rfIHFYEY4aWp8",
-    'authDomain': "kingsauth-67a90.firebaseapp.com",
-    'projectId': "kingsauth-67a90",
-    'storageBucket': "kingsauth-67a90.appspot.com",
-    'messagingSenderId': "698579119515",
-    'appId': "1:698579119515:web:81f6f24d1225745278053e",
-    'measurementId': "G-XHE0YBHKDH",
-     'databaseURL':''
+  "apiKey": "AIzaSyAPy27QXRyF66zTNI8_7YL6VPy6_fV1YN0",
+  "authDomain": "kingsbiz.firebaseapp.com",
+  "projectId": "kingsbiz",
+  "storageBucket": "kingsbiz.appspot.com",
+  "messagingSenderId": "759077597041",
+  "appId": "1:759077597041:web:0c7aab9c764499cacf50d0",
+  'databaseURL':''
     
 }
 firebase = pyrebase.initialize_app(config)
