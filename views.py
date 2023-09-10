@@ -1,6 +1,12 @@
 from flask import Blueprint, abort, redirect, render_template,request, session, url_for
 from jinja2 import TemplateNotFound
 from pyrebase import pyrebase
+from google.cloud import firestore
+from werkzeug.utils import secure_filename
+import os
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
 
 
 # Configuration and Initialize firebase
@@ -16,6 +22,9 @@ config = {
 }
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
+
+
+
 
 # Registering our urls
 views = Blueprint(__name__,"views")
@@ -95,3 +104,36 @@ def logout():
     
     # Redirect the user to the login page with a success message
     return render_template('index.html', success_message='You have successfully logged out from Angels Paradise')
+
+@views.route('/create',  methods=['GET', 'POST'])
+def create():
+    if request.method == 'POST':
+        title = request.form['title']
+        description = request.form['description']
+        per_two_hour = request.form['per_two_hour']
+        per_four_hour = request.form['per_four_hour']
+        overnight = request.form['overnight']
+        per_day = request.form['per_day']
+        weekend = request.form['weekend']
+        weekly = request.form['weekly']
+        profile_picture = request.files['profile_picture']
+        filename = secure_filename(profile_picture.filename)
+        profile_picture.save(os.path.join('uploads', filename))
+
+        profile_data = {
+            'title': title,
+            'description': description,
+            'charges': {
+                'per_two_hour': per_two_hour,
+                'per_four_hour': per_four_hour,
+                'overnight': overnight,
+                'per_day': per_day,
+                'weekend': weekend,
+                'weekly': weekly
+            },
+            'profile_picture': filename
+        }
+
+        # db.collection('profiles').add(profile_data)
+        # return render_template("dashboard-admin.html", success_message='Created successfully')
+    return render_template('create-profile.html')
