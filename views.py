@@ -49,7 +49,14 @@ def auth_view():
 def dash_view():
     if auth.current_user != None:
         return render_template('dashboard-user.html')
-    return render_template('login.html', user_not_authenticated=True)        
+    return render_template('login.html', user_not_authenticated=True)     
+
+@views.route('/employ-form')
+def employee_form():
+    try:
+        return render_template('employment.html')
+    except TemplateNotFound:
+        abort(404)   
 
 @views.route('/authenticate', methods=['GET','POST'])
 def authenticate():

@@ -1,0 +1,88 @@
+ </section><!-- End F.A.Q Section -->
+        <!-- ======= About Section ======= -->
+        <section id="employ" class="contact">
+          <div class="container">
+    
+            <div class="section-title" data-aos="zoom-out">
+              <h2>SEEKING EMPLOYMENT</h2>
+              <p>EMPLOYMENT</p>
+            </div>
+    
+            <div class="row content" data-aos="fade-up">
+              <p>
+                If you are interested in <b>FEMALE ESCORT</b> employment, fill out the form below and upload your photographs; if we are interested in hiring you, we will contact you and will be able to address any questions you may have at that point. If you do not get a response it is because we are not interested in working with you. 
+              </p>
+              <div class="col-lg-6" style="text-align:justify;">
+                <p>
+                  It is also required to have <b>PROFESSIONALS PHOTOS</b> to work at Angels4kings, If you do not have them there is a 99.9% chance we will not respond to you.
+                </p>
+                <p>
+                  <b> DO NOT apply</b> if you currently live outside <b>KENYA</b> as we only represent women within <b>KENYA</b>. If you are from <b>NAIROBI, NAKURU, MOMBASA and KISUMU</b> is an added advantage.
+                </p>
+                <p>
+                  Angels need to be at least 21 years old. Not all must be working as a female model. All female escorts <b>MUST</b> be very well-traveled, cultured, educated and most importantly, be very proficient in making a <b>MAN</b> feel <b>SAFE</b> and <b>RELAXED</b>.
+                </p>
+                <p>
+                  Angels need to be <b>VERY ATTRACTIVE</b>, dedicated to a top level of <b>FITNESS</b>, presentable, well-groomed, stylish, <b>CHARMING</b> and <b>DESIRABLE</b>. Angels need to be <b>CONFIDENT</b> but not arrogant, yet <b>SAVVY</b>. All female companions need to be <b>EMOTIONALLY MATURE</b>, stable and possess a <b>GENUINE RESPECT</b> for <b>MEN.</b>
+                </p>
+                <p>
+                  Unfortunately there is a <b>SOCIAL STIGMA</b> that female escort employment is providing a <b>SEXUAL SERVICES</b>. The most important aspects of providing <b>QUALITY COMPANIONSHIP</b> are often ignored. At <b>ANGELS 4 KINGS</b we pride ourselves in providing our clients with UNDIVIDED ATTENTION and engaging in INTELLIGENT often WITTY conversations. ANGELS 4 KINGS does not sell sex. 
+                </p>
+                <p>
+                  We sell our female escorts <b>TIME</b> to provide <b>COMPANIONSHIP</b> and <b>PROTECTION</b> for our <b>CLIENTS</b>.
+                </p>
+                <p>
+                  Please see our Terms & Conditions for a complete list of expectations and responsibilities.
+                </p>
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0">
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                    </div>
+                  </div>
+                  <div class="form-group mt-3">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                  </div>
+                  <div class="form-group mt-3">
+                    <input type="phone" class="form-control" name="Phone Number" id="phone" placeholder="+2547" required>
+                  </div>
+                  <div class="form-group mt-3">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Describe yourself in terms of (age, Where are you located, complexion, Peffered Escort Name)" required></textarea>
+                  </div>
+                  <div>
+                  <input id="file"type="file" name="file"/>
+                  </div>
+                  <div>
+                    <input id="file"type="file" name="file"/>
+                  </div>
+                  <div>
+                    <input id="file"type="file" name="file"/>
+                    </div>
+                  <div class="my-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+                  <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+              
+                <p style="margin-top: 15px;">
+                  Do not send us nude photos! Applications including nude photos will be immediately deleted! It is also required to have professional photos to work at Angels4Kings so if you do not have them there is a 99.9% chance we will not respond to you.
+                </p>
+              </div>
+                <p style="margin-top: 15px; text-align:justify;">
+                <b>CONTINUALLY:</b><br>
+                Are you a TOURIST who does not know the area. So, you pick up dial us because you want to have some COMPANIONSHIP with an ANGEL familiar with the area. Someone to accompany to a WEDDING, BUSINESS MEETING, SOCIAL GATHERING or COMPANIONSHIP at home all these reasons are valid. It is your reason. We are not here to judge or interrogate you, your PRIVACY is as said your PRIVATE.
+                </p>
+                <p style="margin-top: 15px; text-align:justify;">
+                <b>WE DO NOT ANSWER RESTRICTED CALLS:</b><br>
+                Why waste your time buying endless drinks, sending endless emails, endless text messages? The hassle of verifying pictures. Playing phone tog to a beautiful woman to spend the evening with you. Save your time and money and book from ANGEL4KINGS Service. We have done 80% of the work for you 20% is when you pick up the phone to call us.                </p>
+            </div>
+    
+          </div>
+        </section><!-- End About Section -->
