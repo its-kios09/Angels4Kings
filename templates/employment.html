@@ -100,7 +100,7 @@
           </p>
         </div>
         <div class="">
-          <form action="" method="post" role="form" class="php-email-form">
+          <form action="{{ url_for('send_employee') }}" method="POST" role="form" class="php-email-form" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-6 form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -113,20 +113,20 @@
               <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
             </div>
             <div class="form-group mt-3">
-              <input type="phone" class="form-control" name="Phone Number" id="phone" placeholder="+2547" required>
+              <input type="phone" class="form-control" name="Phone" id="phone" placeholder="+2547" required>
             </div>
             <div class="form-group mt-3">
               <textarea class="form-control" name="message" rows="5" placeholder="Describe yourself in terms of (age, Where are you located, complexion, Peffered Escort Name)" required></textarea>
             </div>
-            <div>
-            <input id="file"type="file" name="file"/>
+            <div class="form-group mt-3">
+              <input type="file" class="form-control" name="file1" id="file1">
             </div>
-            <div>
-              <input id="file"type="file" name="file"/>
+            <div class="form-group mt-3">
+              <input type="file" class="form-control" name="file2" id="file2">
             </div>
-            <div>
-              <input id="file"type="file" name="file"/>
-              </div>
+            <div class="form-group mt-3">
+              <input type="file" class="form-control" name="file3" id="file3">
+            </div>
             <div class="my-3">
               <div class="loading">Loading</div>
               <div class="error-message"></div>

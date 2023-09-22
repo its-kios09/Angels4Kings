@@ -1,12 +1,11 @@
-from flask import Blueprint, abort, redirect, render_template,request, session, url_for
+from flask import Blueprint, abort, redirect, render_template,request, session, url_for,current_app
 from jinja2 import TemplateNotFound
 from pyrebase import pyrebase
 from google.cloud import firestore
 from werkzeug.utils import secure_filename
 import os
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
+from firebase_admin import credentials,firestore
+from flask_mail import Message
 
 
 # Configuration and Initialize firebase
@@ -20,10 +19,9 @@ config = {
   'databaseURL':''
     
 }
+
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
-
-
 
 
 # Registering our urls
@@ -51,6 +49,7 @@ def dash_view():
         return render_template('dashboard-user.html')
     return render_template('login.html', user_not_authenticated=True)     
 
+# Employment page route
 @views.route('/employ-form')
 def employee_form():
     try:
