@@ -34,8 +34,12 @@ def send_mail():
     msg = Message(subject, recipients=['info@angels4kings.com'])
     msg.body = f"You have received a new message from {email}.\n\nHello Admin,\n\nName: {name}\nEmail: {email}\n\nMessage:\n{message}\n\n\n\nBest regards,\nwww.angels4kings.com"
 
-    mail.send(msg)
-    return render_template('index.html', success_message='Mail sent successfully')
+    try:
+        mail.send(msg)
+        return 'Mail sent successfully'
+    except Exception as e:
+        return str(e)
+
 
 @app.route('/send_employee', methods=['POST'])
 def send_employee():
@@ -62,7 +66,7 @@ def send_employee():
 
     try:
         mail.send(msg)
-        return render_template('index.html', success_message='Mail sent successfully')
+        return 'Mail sent successfully'
     except Exception as e:
         return str(e)
 

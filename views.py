@@ -4,7 +4,10 @@ from pyrebase import pyrebase
 from google.cloud import firestore
 from werkzeug.utils import secure_filename
 import os
-from firebase_admin import credentials,firestore
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+
 from flask_mail import Message
 
 
@@ -22,6 +25,11 @@ config = {
 
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
+
+cred = credentials.Certificate('./key/credentials.json')
+firebase_admin.initialize_app(cred)
+db = firestore.client()
+
 
 
 # Registering our urls
@@ -46,8 +54,11 @@ def auth_view():
 @views.route('/dashboard', methods=['GET'])
 def dash_view():
     if auth.current_user != None:
-        return render_template('dashboard-user.html')
-    return render_template('login.html', user_not_authenticated=True)     
+
+        return render_template('dashboard-user.html', profile_data=profile_data)
+
+    return render_template('login.html', user_not_authenticated=True)
+   
 
 # Employment page route
 @views.route('/employ-form')
@@ -111,9 +122,10 @@ def logout():
     # Redirect the user to the login page with a success message
     return render_template('index.html', success_message='You have successfully logged out from Angels Paradise')
 
-@views.route('/create',  methods=['GET', 'POST'])
-def create():
+@views.route('/create', methods=['GET', 'POST'])
+def create_profile():
     if request.method == 'POST':
+        # Retrieve form data
         title = request.form['title']
         description = request.form['description']
         per_two_hour = request.form['per_two_hour']
@@ -124,8 +136,9 @@ def create():
         weekly = request.form['weekly']
         profile_picture = request.files['profile_picture']
         filename = secure_filename(profile_picture.filename)
-        profile_picture.save(os.path.join('uploads', filename))
+        profile_picture.save(os.path.join('./static/uploads', filename))
 
+        # Create a dictionary with the data
         profile_data = {
             'title': title,
             'description': description,
@@ -140,6 +153,10 @@ def create():
             'profile_picture': filename
         }
 
-        # db.collection('profiles').add(profile_data)
-        # return render_template("dashboard-admin.html", success_message='Created successfully')
+        # Store the data in Firebase
+        db.collection('profiles').add(profile_data)
+
+        # Return a success message or redirect to another page
+        return render_template("dashboard-admin.html", success_message='Created successfully')
+
     return render_template('create-profile.html')

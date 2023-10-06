@@ -144,28 +144,14 @@
     </div>
   </header>
   <div class="wrapper-container">
+    {% for profile in profile_data %}
     <div class="cardview">
-      <img src="./static/img/client.jpg">
+      <img src="{{ url_for('static', filename='uploads/' + profile.profile_picture) }}" alt="Profile Picture">
       <div class="info">
-        <h5>Client Name</h5>
-        <p>My name is Fredrick Kioko from Mathare A3 age 25 years old</p>
+        <h5>{{ profile.title }}</h5>
+        <p>{{ profile.description }}</p>
         <button class="button-Rates" data-bs-toggle="modal" data-bs-target="#myModal"
           style="background-color: #fd9042; border: none; border-radius: 8px; padding: 8px 15px;">View Her Rates</button>
-      </div>
-    </div>
-    <div class="cardview">
-      <img src="./static/img/client.jpg">
-      <div class="info">
-        <h5>Client Name</h5>
-        <p>My name is Fredrick Kioko from Mathare A3 age 25 years old</p>
-        
-      </div>
-    </div>
-    <div class="cardview">
-      <img src="./static/img/client.jpg">
-      <div class="info">
-        <h5>Client Name</h5>
-        <p>My name is Fredrick Kioko from Mathare A3 age 25 years old</p>
       </div>
     </div>
   </div>
@@ -189,27 +175,27 @@
           <tbody>
             <tr>
               <td>Two Hour</td>
-              <td>$850</td>
+              <td>{{ profile.charges.per_two_hour }}</td>
             </tr>
             <tr>
               <td>Four Hour</td>
-              <td>$1650</td>
+              <td>{{ profile.charges.per_four_hour }}</td>
             </tr>
             <tr>
               <td>Overnight</td>
-              <td>$3400</td>
+              <td>{{ profile.charges.overnight }}</td>
             </tr>
             <tr>
               <td>Per Day</td>
-              <td>$4500</td>
+              <td>{{ profile.charges.per_day }}</td>
             </tr>
             <tr>
               <td>Weekend</td>
-              <td>$8000</td>
+              <td>{{ profile.charges.weekend }}</td>
             </tr>
             <tr>
               <td>Weekly</td>
-              <td>$27000</td>
+              <td>{{ profile.charges.weekly }}</td>
             </tr>
           </tbody>
         </table>
@@ -220,6 +206,7 @@
     </div>
   </div>
 </div>
+{% endfor %}
 
 
   <!-- Vendor JS Files -->
@@ -244,7 +231,7 @@
               toast: true,
               position: "top",
               showConfirmButton: false,
-              timer: 2000
+              timer: 1000
           });
       {% endif %}
   </script>
