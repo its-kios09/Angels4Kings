@@ -142,6 +142,7 @@ def create_profile():
         # Retrieve form data
         title = request.form['title']
         description = request.form['description']
+        location = request.form['location']
         per_two_hour = request.form['per_two_hour']
         per_four_hour = request.form['per_four_hour']
         overnight = request.form['overnight']
@@ -156,6 +157,7 @@ def create_profile():
         profile_data = {
             'title': title,
             'description': description,
+            'location': location,
             'charges': {
                 'per_two_hour': per_two_hour,
                 'per_four_hour': per_four_hour,

@@ -222,7 +222,7 @@ img {
         <img src="{{ url_for('static', filename='uploads/' + profile.profile_picture) }}" alt="">
       </div>
       <div class="content">
-        <div class="title">{{ profile.title}}<span class="blog-date">27.12.2017</span></div>
+        <div class="title">{{ profile.title}}<span class="blog-date">{{ profile.location}}</span></div>
         <div class="rounded"></div>
         <p style="text-align:justify;">
           {{ profile.description }}
