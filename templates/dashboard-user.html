@@ -30,98 +30,170 @@
 
   <!-- Main CSS File -->
   <link href="/static/css/style.css" rel="stylesheet">
-  <style>
-    *{
-      box-sizing: border-box;
-    }
-
-    body {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .wrapper-container{
-      margin-top: 90px;
-      display: flex;
-      width: 80%;
-      justify-content: space-around;
-    }
-    .cardview{
-      width: 280px;
-      height: 360px;
-      padding: 2rem 1rem;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
-      transition: 0.5s ease-in-out;
-    }
-    .cardview:hover{
-      transform: translateY(20px);
-    }
-    .cardview:before{
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
-      z-index: 2;
-      transition: 0.5s all;
-      opacity: 0;
-    }
-    .cardview:hover:before{
-      opacity: 1;
-    }
-    .cardview img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    .cardview .info{
-      position: relative;
-      z-index: 3;
-      color: #000;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 0.5s all;
-    }
-    .cardview:hover .info{
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    .cardview .info h5{
-      margin: 0;
-    }
-
-    .cardview .info p{
-      letter-spacing: 1px;
-      font-size: 15px;
-      margin-top: 8px;
-      margin-bottom: 20px;
-    }
-    @media (max-width: 768px) {
-      .wrapper-container {
-        flex-direction: column; 
-        align-items: center; 
-        justify-content: space-around;
-
-      }
-      .cardview {
-        margin-bottom: 20px; 
-      }
-    
-    }
-  </style>
-
 </head>
+<style>
+  @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 100px 0;
+}
+
+img {
+    width: 150%;
+    vertical-align: middle;
+  
+}
+
+.blog-item img {
+  display: block;
+}
+
+.blog-item a {
+    display: flex;
+    padding: 40px;
+    overflow: hidden;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    color: #333;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.blog-item a:hover {
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.blog-item .icon {
+    width: 35%;
+    object-fit: cover;
+    margin-right: 50px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 15px 26px rgba(0, 0, 0, 0.4);
+}
+
+.blog-item .content {
+    width: 65%;
+}
+
+.blog-item .content .title {
+    font-size: 21px;
+    text-transform: capitalize;
+    color: #25aae1;
+    font-weight: 600;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+
+
+.blog-item .content .title .blog-date {
+    font-size: 12px;
+    margin-left: 20px;
+    color: #333;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+.blog-item .content .title .blog-date:before {
+    content: '/';
+    color: #2bb673;
+    font-size: 25px;
+    top: auto;
+    position: relative;
+    margin-right: 10px;
+}
+
+.blog-item .content .rounded {
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.blog-item .item-arrow {
+    height: 20px;
+    width: 15%;
+    position: relative;
+    text-align: center;
+    font-size: 35px;
+    left: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.blog-item a:hover > .item-arrow {
+    /*padding-left: 40px;*/
+    color: #25aae1;
+    left: 30px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.rounded {
+    width: 70px;
+    height: 5px;
+    border-radius: 6px;
+    background-image: linear-gradient(to right, #25aae1, #40e495);
+    /* background: #2bb769; */
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px){
+
+    .blog-item .content {
+        width: 100%;
+        margin-top: 35px;
+    }
+
+    .blog-item .content .title {
+        font-size: 18px;
+    }
+
+    .blog-item .item-arrow {
+        margin: auto;
+    }
+
+    .blog-item .icon {
+        width: 100%;
+    }
+
+    .blog-item .icon img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .blog-item {
+        width: 92%;
+        margin: auto;
+    }
+
+    .blog-item a {
+        display: block;
+        padding: 30px;
+    }
+
+}
+
+
+
+
+</style>
 
 <body>
 
@@ -143,71 +215,66 @@
       </nav><!-- .navba<!-- ======= Hero Section ======= -->
     </div>
   </header>
-  <div class="wrapper-container">
-    {% for profile in profile_data %}
-    <div class="cardview">
-      <img src="{{ url_for('static', filename='uploads/' + profile.profile_picture) }}" alt="Profile Picture">
-      <div class="info">
-        <h5>{{ profile.title }}</h5>
-        <p>{{ profile.description }}</p>
-        <button class="button-Rates" data-bs-toggle="modal" data-bs-target="#myModal"
-          style="background-color: #fd9042; border: none; border-radius: 8px; padding: 8px 15px;">View Her Rates</button>
+  {% for profile in profile_data %}
+  <div class="blog-item">
+    <a href="#">
+      <div class="icon">
+        <img src="{{ url_for('static', filename='uploads/' + profile.profile_picture) }}" alt="">
       </div>
-    </div>
-  </div>
-  <!-- Modal -->
-  <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Rates</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="content">
+        <div class="title">{{ profile.title}}<span class="blog-date">27.12.2017</span></div>
+        <div class="rounded"></div>
+        <p style="text-align:justify;">
+          {{ profile.description }}
+        </p>
+        <p>
+          <div class="title">Her Rates</div>
+          <div class="rounded"></div>
+          <br>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Arrangement</th>
+                <th>Charges</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Two Hours</td>
+                <td>Ksh {{ profile.charges.per_two_hour }}</td>
+              </tr>
+              <tr>
+                <td>Four Hours</td>
+                <td>Ksh {{ profile.charges.per_four_hour }}</td>
+              </tr>
+              <tr>
+                <td>Overnight</td>
+                <td>Ksh {{ profile.charges.overnight }}</td>
+              </tr>
+              <tr>
+                <td>A Day</td>
+                <td>Ksh {{ profile.charges.per_day }}</td>
+              </tr>
+              <tr>
+                <td>Weekend</td>
+                <td>Ksh {{ profile.charges.weekend }}</td>
+              </tr>
+              <tr>
+                <td>Weekly</td>
+                <td>Ksh {{ profile.charges.weekly }}</td>
+              </tr>
+            </tbody>
+          </table>
+        
+        </p>
       </div>
-      <div class="modal-body">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Duration</th>
-              <th>Rate</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Two Hour</td>
-              <td>{{ profile.charges.per_two_hour }}</td>
-            </tr>
-            <tr>
-              <td>Four Hour</td>
-              <td>{{ profile.charges.per_four_hour }}</td>
-            </tr>
-            <tr>
-              <td>Overnight</td>
-              <td>{{ profile.charges.overnight }}</td>
-            </tr>
-            <tr>
-              <td>Per Day</td>
-              <td>{{ profile.charges.per_day }}</td>
-            </tr>
-            <tr>
-              <td>Weekend</td>
-              <td>{{ profile.charges.weekend }}</td>
-            </tr>
-            <tr>
-              <td>Weekly</td>
-              <td>{{ profile.charges.weekly }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-{% endfor %}
 
+
+      <div class="item-arrow" id="right-arrow">
+      </div>
+    </a>
+  </div>
+  {% endfor %}
 
   <!-- Vendor JS Files -->
   <script src="/static/vendor/aos/aos.js"></script>
@@ -235,12 +302,7 @@
           });
       {% endif %}
   </script>
-  <script>
-    $(document).ready(function(){
-      $('#MybtnModal').click(function(){
-          $('#Mymodal').modal('show')
-      });
-    });
+  
 </body>
 
 </html>

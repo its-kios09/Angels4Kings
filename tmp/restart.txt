@@ -1,2 +1,0 @@
-<button class="button-Rates" data-bs-toggle="modal" data-bs-target="#myModal"
-          style="background-color: #fd9042; border: none; border-radius: 8px; padding: 8px 15px;">View Her Rates</button>

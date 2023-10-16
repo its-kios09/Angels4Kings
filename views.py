@@ -70,7 +70,7 @@ def employee_form():
 
 @views.route('/authenticate', methods=['GET','POST'])
 def authenticate():
-    if request.method == 'POST':
+    if request.method == 'POST' or request.method == 'GET':
         email = request.form['email']
         password = request.form['password']
         
@@ -103,8 +103,22 @@ def authenticate():
                 session['usr'] = user_id
                 session['email'] = email
                 
+                # Fetch all profile data from the 'profiles' collection
+                profiles_ref = db.collection('profiles')
+                profiles = profiles_ref.get()
+
+                # Create an empty list to store the profile data
+                profile_data = []
+
+                # Iterate over the profiles and extract the necessary data
+                for profile in profiles:
+                    data = profile.to_dict()
+                    profile_data.append(data)
+                            
+                
+                
                 # Redirect regular user to user dashboard
-                return render_template("dashboard-user.html", success_message='You are logged in successfully to angels paradise')
+                return render_template("dashboard-user.html", success_message='You are logged in successfully to angels paradise',profile_data=profile_data)
                 
             except:
                 return render_template('login.html', error_message="Bad credentials. Contact the administrator")
