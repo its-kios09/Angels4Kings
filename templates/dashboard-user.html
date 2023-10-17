@@ -222,7 +222,15 @@ img {
         <img src="{{ url_for('static', filename='uploads/' + profile.profile_picture) }}" alt="">
       </div>
       <div class="content">
-        <div class="title">{{ profile.title}}<span class="blog-date">{{ profile.location}}</span></div>
+        <div class="title">{{ profile.title}}<span class="blog-date" style="font-size: 17px;">{{ profile.location}}</span></div><br>
+        <b>Details<br></b>
+        <div class="rounded"></div>
+        <p style="text-align:justify;">
+          Age: {{ profile.age}} Years old<br>
+          Weight: {{ profile.weight}} Kg(s)<br>
+          Height: {{ profile.height}} (cm/m)<br>
+        </p>
+        <b>About {{ profile.title}} <br></b>
         <div class="rounded"></div>
         <p style="text-align:justify;">
           {{ profile.description }}

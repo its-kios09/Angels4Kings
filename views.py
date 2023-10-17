@@ -146,6 +146,9 @@ def create_profile():
         per_two_hour = request.form['per_two_hour']
         per_four_hour = request.form['per_four_hour']
         overnight = request.form['overnight']
+        height = request.form['height']
+        age = request.form['age']
+        weight = request.form['weight']
         per_day = request.form['per_day']
         weekend = request.form['weekend']
         weekly = request.form['weekly']
@@ -158,6 +161,9 @@ def create_profile():
             'title': title,
             'description': description,
             'location': location,
+            'height': height,
+            'age':age,
+            'weight': weight,
             'charges': {
                 'per_two_hour': per_two_hour,
                 'per_four_hour': per_four_hour,
