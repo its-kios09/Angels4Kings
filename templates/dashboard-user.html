@@ -204,7 +204,7 @@ img {
       <div class="logo">
         <!-- <h1><a href="index.html">Cowboys 4 Angels</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="index.html"><img src="./static/img/logo.png" alt="" class="img-fluid"></a>
+        <a href="{{ url_for('views.index') }}"><img src="./static/img/logo.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -223,7 +223,7 @@ img {
       </div>
       <div class="content">
         <div class="title">{{ profile.title}}<span class="blog-date" style="font-size: 17px;">{{ profile.location}}</span></div><br>
-        <b>Details<br></b>
+        <b>Details <br></b>
         <div class="rounded"></div>
         <p style="text-align:justify;">
           Age: {{ profile.age}} Years old<br>
@@ -235,6 +235,11 @@ img {
         <p style="text-align:justify;">
           {{ profile.description }}
         </p>
+        <b>  
+          <form action="{{ url_for('views.view_more_pic') }}">
+          <button style="background-color: transparent;border: none;"><span style="font-size: 21px; color: #25aae1; font-weight: 600; font-family: 'Josefin Sans', sans-serif;">Click Here to View more {{ profile.title}}'s Photos</span><br></button></b>
+        </form>
+        <div class="rounded"></div>
         <p>
           <div class="title">Her Rates</div>
           <div class="rounded"></div>

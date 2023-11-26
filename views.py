@@ -135,6 +135,19 @@ def logout():
     
     # Redirect the user to the login page with a success message
     return render_template('index.html', success_message='You have successfully logged out from Angels Paradise')
+@views.route('/view-more-pics')
+def view_more_pic():
+    profiles_ref = db.collection('profiles')
+    profiles = profiles_ref.get()
+    
+    profile_data = []
+    for profile in profiles:
+        data = profile.to_dict()
+        profile_data.append(data)
+
+                            
+    # Redirect the user to the view more pics page with a success message
+    return render_template('view-more-photos.html',profile_data=profile_data)
 
 @views.route('/create', methods=['GET', 'POST'])
 def create_profile():
@@ -153,8 +166,27 @@ def create_profile():
         weekend = request.form['weekend']
         weekly = request.form['weekly']
         profile_picture = request.files['profile_picture']
+        profile_image_1 = request.files['profile_image_1']
+        profile_image_2 = request.files['profile_image_2']
+        profile_image_3 = request.files['profile_image_3']
+        profile_image_4 = request.files['profile_image_4']
+        profile_image_5 = request.files['profile_image_5']
+
         filename = secure_filename(profile_picture.filename)
+        filename_1 = secure_filename(profile_image_1.filename)
+        filename_2 = secure_filename(profile_image_2.filename)
+        filename_3 = secure_filename(profile_image_3.filename)
+        filename_4 = secure_filename(profile_image_4.filename)
+        filename_5 = secure_filename(profile_image_5.filename)
+
+        
         profile_picture.save(os.path.join('./static/uploads', filename))
+        profile_image_1.save(os.path.join('./static/uploads', filename_1))
+        profile_image_2.save(os.path.join('./static/uploads', filename_2))
+        profile_image_3.save(os.path.join('./static/uploads', filename_3))
+        profile_image_4.save(os.path.join('./static/uploads', filename_4))
+        profile_image_5.save(os.path.join('./static/uploads', filename_5))
+
 
         # Create a dictionary with the data
         profile_data = {
@@ -172,7 +204,12 @@ def create_profile():
                 'weekend': weekend,
                 'weekly': weekly
             },
-            'profile_picture': filename
+            'profile_picture': filename,
+            'profile_image_1': filename_1,
+            'profile_image_2': filename_2,
+            'profile_image_3': filename_3,
+            'profile_image_4': filename_4,
+            'profile_image_5': filename_5
         }
 
         # Store the data in Firebase

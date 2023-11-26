@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Angels4Kings</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Favicons -->
+  <link href="/static/img/logo.png" rel="icon">
+  <link href="/static/img/logo.png" rel="apple-touch-icon">
+
+
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<style>
+  @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+
+
+
+
+</style>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <!-- <h1><a href="index.html">Cowboys 4 Angels</a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="{{ url_for('views.index') }}"><img src="./static/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="{{ url_for('views.logout') }}">Logout</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navba<!-- ======= Hero Section ======= -->
+    </div>
+  </header>
+
+  <div class="slide-container">
+    <span class="slider-span" id="slider-span1"></span>
+    <span class="slider-span" id="slider-span2"></span>
+    <span class="slider-span" id="slider-span3"></span>
+    <span class="slider-span" id="slider-span4"></span>
+    <span class="slider-span" id="slider-span5"></span>
+
+
+    {% for profile in profile_data %}
+
+    <div class="image-slider">
+        <div class="slides-div" id="slide-1">
+            <img src="{{ url_for('static', filename='uploads/' + profile.profile_image_1) }}" alt="" class="img" id="img1">
+            <a href="#slider-span1" class="button" id="button-1"></a>
+        </div>
+        
+        <div class="slides-div" id="slide-2">
+            <img src="{{ url_for('static', filename='uploads/' + profile.profile_image_2) }}" alt="" class="img" id="img2">
+            <a href="#slider-span2" class="button" id="button-2"></a>
+        </div>
+        <div class="slides-div" id="slide-3">
+            <img src="{{ url_for('static', filename='uploads/' + profile.profile_image_3) }}" alt="" class="img" id="img3">
+            <a href="#slider-span3" class="button" id="button-3"></a>
+        </div>
+        <div class="slides-div" id="slide-4">
+            <img src="{{ url_for('static', filename='uploads/' + profile.profile_image_4) }}" alt="" class="img" id="img4">
+            <a href="#slider-span4" class="button" id="button-4"></a>
+        </div>
+        <div class="slides-div" id="slide-5">
+            <img src="{{ url_for('static', filename='uploads/' + profile.profile_image_5) }}" alt="" class="img" id="img5">
+            <a href="#slider-span5" class="button" id="button-5"></a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/aos/aos.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+      {% if success_message %}
+          Swal.fire({
+              title: "Success",
+              text: "{{ success_message }}",
+              icon: "success",
+              toast: true,
+              position: "top",
+              showConfirmButton: false,
+              timer: 1000
+          });
+      {% endif %}
+  </script>
+  
+</body>
+
+</html>

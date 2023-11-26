@@ -990,3 +990,127 @@ input[type=number]::-webkit-outer-spin-button{
 	-webkit-appearance:none;
 	margin:0;
 }
+
+/* More */
+.slide-container {
+  width: 100%;
+  height:85vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-slider{
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+
+.slides-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 30px;
+}
+
+.img{
+  position: relative;
+  width: 240px;
+  height: 370px;
+  transition: 0.5s;
+}
+
+.button {
+  position: absolute;
+  width: 240px;
+  height: 370px;
+  transition: 0.5s;
+  background-color: rgba(67, 67, 151, 0.2);
+}
+
+#slider-span1:target ~ .image-slider #img1,
+#slider-span1:target ~.image-slider #button-1{
+  width:380px;
+  height: 585px;
+  background-color: transparent;
+}
+#slider-span2:target ~ .image-slider #img2,
+#slider-span2:target ~.image-slider #button-2{
+  width:380px;
+  height: 585px;
+  background-color: transparent;
+}
+#slider-span3:target ~ .image-slider #img3,
+#slider-span3:target ~.image-slider #button-3{
+  width:380px;
+  height: 585px;
+  background-color: transparent;
+}
+#slider-span4:target ~ .image-slider #img4,
+#slider-span4:target ~.image-slider #button-4{
+  width:380px;
+  height: 585px;
+  background-color: transparent;
+}
+#slider-span5:target ~ .image-slider #img5,
+#slider-span5:target ~.image-slider #button-5{
+  width:380px;
+  height: 585px;
+  background-color: transparent;
+}
+
+#slider-span1:target ~.image-slider{
+  left:20%;
+}
+#slider-span2:target ~.image-slider{
+  left:0%;
+}
+#slider-span3:target ~.image-slider{
+  left:0%;
+}
+#slider-span4:target ~.image-slider{
+  left:0%;
+}
+#slider-span5:target ~.image-slider{
+  left:-20%;
+}
+
+
+/* Add this CSS at the end of your existing styles */
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .slide-container {
+    height: auto; /* Adjust the height for mobile devices */
+  }
+
+  .image-slider {
+    height: auto; /* Adjust the height for mobile devices */
+    position: relative; /* Reset the position for mobile devices */
+    left: 0; /* Reset the left position for mobile devices */
+    display: flex; /* Change the display to flex for mobile devices */
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+    scroll-snap-type: x mandatory; /* Enable snapping to each image */
+  }
+
+  .slides-div {
+    flex: 0 0 auto; /* Prevent flex items from growing on small screens */
+    scroll-snap-align: start; /* Snap each image to the start of the container */
+  }
+
+  .img {
+    width: 100%; /* Make the images fill the width of the container */
+    height: auto; /* Allow the images to scale proportionally */
+  }
+
+  .button {
+    display: none; /* Hide the buttons for mobile devices */
+  }
+
+  /* Add any other necessary adjustments for mobile devices */
+}
